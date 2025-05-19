@@ -1,28 +1,30 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+import { Product } from './ngrx.state';
 
-export const loadNGRX = createAction('[NGRX Component] Load NGRX');
+const loadNGRX = createAction('[NGRX Component] Load NGRX');
 
-export const loadNGRXSuccess = createAction(
+const loadNGRXSuccess = createAction(
   '[NGRX Component] Load NGRX Success',
-  (ngrx: any) => ({ ngrx })
+  props<{ products: Product[] }>()
 );
 
-export const loadNGRXFailure = createAction(
+const loadNGRXFailure = createAction(
   '[NGRX Component] Load NGRX Failure',
-  (error: any) => ({ error })
+  props<{ error: any }>()
 );
 
-export const addNGRX = createAction(
+const addNGRX = createAction(
   '[NGRX Component] Add NGRX',
-  (ngrx: any) => ({ ngrx })
+  props<{ products: Product }>()
 );
 
-export const addNGRXSuccess = createAction(
+const addNGRXSuccess = createAction(
   '[NGRX Component] Add NGRX Success',
-  (ngrx: any) => ({ ngrx })
 );
 
-export const addNGRXFailure = createAction(
+const addNGRXFailure = createAction(
   '[NGRX Component] Add NGRX Failure',
-  (error: any) => ({ error })
+  props<{ error: any }>()
 );
+
+export const NGRXActions = {loadNGRX, loadNGRXSuccess, loadNGRXFailure, addNGRX, addNGRXSuccess, addNGRXFailure};
