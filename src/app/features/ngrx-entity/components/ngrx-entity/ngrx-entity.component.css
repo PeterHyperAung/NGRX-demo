@@ -1,0 +1,31 @@
+.form-container {
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+input {
+  padding: 10px;
+}
+
+button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.note-card {
+  padding: 20px;
+  border: 2px solid #333;
+  border-radius: 10px;
+}
