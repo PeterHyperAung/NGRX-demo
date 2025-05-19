@@ -15,16 +15,21 @@ const loadNGRXFailure = createAction(
 
 const addNGRX = createAction(
   '[NGRX Component] Add NGRX',
-  props<{ products: Product }>()
+  props<{ product: Product }>()
 );
 
-const addNGRXSuccess = createAction(
-  '[NGRX Component] Add NGRX Success',
-);
+const addNGRXSuccess = createAction('[NGRX Component] Add NGRX Success');
 
 const addNGRXFailure = createAction(
   '[NGRX Component] Add NGRX Failure',
   props<{ error: any }>()
 );
 
-export const NGRXActions = {loadNGRX, loadNGRXSuccess, loadNGRXFailure, addNGRX, addNGRXSuccess, addNGRXFailure};
+export const NGRXActions = {
+  loadNGRX,
+  loadNGRXSuccess,
+  loadNGRXFailure,
+  addNGRX,
+  addNGRXSuccess,
+  addNGRXFailure,
+};
