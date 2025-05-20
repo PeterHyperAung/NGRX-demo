@@ -10,7 +10,7 @@ export const notesReducer = createReducer(
   on(NotesActions.removeNote, (state, { note }) => {
     return noteAdapter.removeOne(note.id, state);
   }),
-  on(NotesActions.updateNote, (state, { note }) => {
-    return noteAdapter.updateOne({ id: note.id, changes: note }, state);
+  on(NotesActions.updateNote, (state, { update }) => {
+    return noteAdapter.updateOne(update, state);
   })
 );

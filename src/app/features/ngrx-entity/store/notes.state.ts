@@ -2,8 +2,7 @@ import { createEntityAdapter, EntityState } from '@ngrx/entity';
 
 export type Note = {
   id: number;
-  title: string;
-  note: string;
+  text: string;
 };
 
 export interface NoteState extends EntityState<Note> {}

@@ -29,8 +29,7 @@ export class NgrxEntityComponent implements OnInit {
     private fb: FormBuilder
   ) {
     this.noteForm = this.fb.group({
-      title: ['', [Validators.required]],
-      note: ['', [Validators.required]],
+      text: ['', [Validators.required]],
     });
   }
 
@@ -52,14 +51,14 @@ export class NgrxEntityComponent implements OnInit {
   }
 
   update(note: Note) {
-    const updatedNote: Update<Note> = {
+    const update: Update<Note> = {
       id: note.id,
       changes: {
-        title: 'Haha',
+        text: window.prompt('Update Note', note.text) || note.text,
       },
     };
 
-    this.store.dispatch(NotesActions.updateNote(updatedNote));
+    this.store.dispatch(NotesActions.updateNote({ update }));
   }
 
   delete(note: Note) {
